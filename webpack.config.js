@@ -1,13 +1,31 @@
 const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        './src/index.js',
+        './src/index.scss'
+    ],
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: () => [autoprefixer()]
+                        }
+                    },
+                    'sass-loader'
+                ],
             }
         ]
     },
