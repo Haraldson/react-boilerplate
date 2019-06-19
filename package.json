@@ -1,7 +1,7 @@
 {
-    "name": "react-babel-webpack-boilerplate",
+    "name": "react-boilerplate",
     "version": "0.0.1",
-    "description": "React Babel Webpack Boilerplate",
+    "description": "React Boilerplate",
     "main": "index.js",
     "author": "You",
     "license": "MIT",
